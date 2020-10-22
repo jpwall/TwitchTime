@@ -12,8 +12,8 @@ def check_online(streamer):
     elems = p.html.find("p.tw-strong")
     for elem in elems:
         if elem.text == "LIVE":
-            return "online"
-    return "offline"
+            return "✅"
+    return "❌"
 
 for streamer in streamers:
     print("{}: {}".format(streamer, check_online(streamer)))
