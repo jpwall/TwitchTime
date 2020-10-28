@@ -11,7 +11,7 @@ def check_online(streamer):
     p.html.render(timeout=20)
     elems = p.html.find("p.tw-strong")
     for elem in elems:
-        if elem.text == "LIVE":
+        if elem.text.find("LIVE") != -1:
             return "✅"
     return "❌"
 
